@@ -1,19 +1,62 @@
-* {
-    background-color:rgb(224, 210, 152);
+/* Project color palette via CSS variables */
+:root {
+  --color-ink: #1D1E18;   /* dark text */
+  --color-primary: #6B8F71; 
+  --color-soft-1: #AAD2BA;  
+  --color-bg: #D9FFF5;      /* background */
+  --color-on-primary: #ffffff;
+}
+
+/* Base */
+html, body {
+  height: 100%;
 }
 
 
 
+/* Navigation */
 .pure-menu {
-  background-color: #44668b; 
-  color: #ffffff;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
   padding: 0.45rem 1rem;
 }
 
+.pure-menu-heading,
+.pure-menu-link {
+  color: var(--color-on-primary);
+}
 
-.pure-menu-heading {
-  color: #ffffff;
-  font-weight: 600;
-  margin-right: 1rem;
+.pure-menu-link:hover,
+.pure-menu-link:focus {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Buttons */
+.pure-button-primary,
+button.pure-button-primary,
+button[type="submit"].pure-button-primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-color: transparent;
+}
+
+.pure-button-primary:hover,
+.pure-button-primary:focus {
+  filter: brightness(0.95);
+}
+
+/* Form accents */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  background-color: #fff;
+  border: 1px solid var(--color-soft-1);
+}
+
+/* Utility */
+.panel {
+  background: var(--color-soft-2);
+  padding: 1rem;
+  border-radius: 8px;
 }
