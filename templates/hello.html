@@ -1,18 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style.css">
+  <meta charset="utf-8">
+  <title>My Homepage</title>
 
-    <title>Hi!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+
 </head>
 <body>
-    
-<h1>Hello from Render</h1>
-{% if name %}
-<h2>and hello to {{name}}</h2>
-{% endif %}
+
+  <!-- Nav  bar -->
+  <div class="pure-menu pure-menu-horizontal">
+    <a href="/" class="pure-menu-heading pure-menu-link">MySite</a>
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
+      <li class="pure-menu-item"><a href="/about" class="pure-menu-link">About</a></li>
+      <li class="pure-menu-item"><a href="/survey" class="pure-menu-link">Survey</a></li>
+    </ul>
+  </div>
+
+
+
+
+  <div class="pure-g" style="margin:2rem;">
+    <div class="pure-u-1">
+      <h1>Welcome!</h1>
+      <p>This site uses Flask, Jinja2, PostgreSQL, and PureCSS.</p>
+    </div>
+  </div>
+<div>
+<form class="pure-form pure-form-stacked" action="/survey" method="post">
+  <fieldset>
+    <legend>Quick Survey</legend>
+
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" placeholder="Your name">
+    <span class="pure-form-message">Please enter your full name.</span>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="you@example.com">
+    <span class="pure-form-message">This is a required field.</span>
+
+    <label for="feedback">Feedback</label>
+    <textarea id="feedback" name="feedback" placeholder="Write your thoughts..."></textarea>
+
+    <label for="subscribe" class="pure-checkbox">
+      <input id="subscribe" type="checkbox"> Subscribe to newsletter
+    </label>
+
+    <button type="submit" class="pure-button pure-button-primary">Submit</button>
+  </fieldset>
+</form>
+</div>
+
 </body>
 </html>
