@@ -5,9 +5,9 @@ name = "pypi"
 
 [packages]
 gunicorn = "*"
-flask = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
+flask = "*"
 
 [dev-packages]
 

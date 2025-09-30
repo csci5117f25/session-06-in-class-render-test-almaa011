@@ -1,3 +1,19 @@
 * {
-    background-color:lightsalmon;
+    background-color:rgb(224, 210, 152);
+}
+
+
+
+.pure-menu {
+  background-color: #44668b; 
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  padding: 0.45rem 1rem;
+}
+
+
+.pure-menu-heading {
+  color: #ffffff;
+  font-weight: 600;
+  margin-right: 1rem;
 }
