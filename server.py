@@ -1,11 +1,14 @@
 import os
 from pathlib import Path #this is to not hardcode the DB pass and URL
-from flask import Flask, render_template, request, abort
-# from DB import setup, insert_submission
+from flask import Flask, render_template, request, abort, session 
+import DB
+
+# from DB import setup, insert_submission 
 
 # from dotenv import load_dotenv
 # load_dotenv(dotenv_path=Path(__file__).with_name(".env"))
 app = Flask(__name__)
+app.secret_key = os.environ("FLASK_SECRET", "dev")#this is for session managment
 
 # setup()
 
@@ -33,7 +36,7 @@ def survey_post():
 
     try:#see if it works
         
-        _new_id = insert_submission(name, email, feedback)#call helper func from DB to insert new submission
+        _new_id = DB.insert_submission(name, email, feedback)#call helper func from DB to insert new submission
     except Exception as e:
         abort(500, description=f"DB failed brooo {e}")#500 for internal server error
     return render_template("thanks.html", name=name)
